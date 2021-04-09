@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject towerPrefab;
+    // public Material transparentBlue;
+    // public Material transparentRed;
+    // public Material originalMaterial;
+
+
+    [SerializeField] bool isPlaceable;
+    bool hasTower;
+
+    private void Start()
     {
-        
+        //originalMaterial = towerPrefab.GetComponent<Renderer>().material;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseOver()
     {
-        
+        if (isPlaceable && !hasTower)
+        {
+            // towerPrefab.GetComponentInChildren<Renderer>().material = transparentBlue;
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                isPlaceable = false;
+            }
+        }
+        // else
+        // {
+        //     towerPrefab.GetComponent<Renderer>().material = transparentRed;
+        // }
     }
 }
