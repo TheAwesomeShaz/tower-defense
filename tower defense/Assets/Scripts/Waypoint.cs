@@ -11,6 +11,8 @@ public class Waypoint : MonoBehaviour
 
 
     [SerializeField] bool isPlaceable;
+    public bool IsPlaceable { get { return isPlaceable; } }
+
     bool hasTower;
 
     private void Start()

@@ -7,6 +7,7 @@ public class TargetLocator : MonoBehaviour
     public Transform weapon;
     public Transform target;
 
+
     // Start is called before the first frame update
     void Start()
     {
