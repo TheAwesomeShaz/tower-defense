@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4933,6 +4933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 7271158023556725166}
+  projectileParticles: {fileID: 3092709294802610997}
+  range: 50
   target: {fileID: 0}
 --- !u!1 &7277077112202773764
 GameObject:

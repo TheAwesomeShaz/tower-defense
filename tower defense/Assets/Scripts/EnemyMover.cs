@@ -8,9 +8,28 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        FindPath();
+        ReturnToStart();
         StartCoroutine(followPath());
+    }
+
+    void FindPath()
+    {
+        path.Clear();
+
+        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+
+        foreach (var wp in waypoints) // wp for waypoint
+        {
+            path.Add(wp.GetComponent<Waypoint>());
+        }
+    }
+
+    void ReturnToStart()
+    {
+        transform.position = path[0].transform.position;
     }
 
     IEnumerator followPath()
@@ -31,6 +50,10 @@ public class EnemyMover : MonoBehaviour
             }
 
         }
+
+        //disable this particular object in the pool when reaching end of the path 
+        //(i.e when there are no more waypoints in the path List)
+        gameObject.SetActive(false);
     }
 
 }
