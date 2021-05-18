@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4897,6 +4897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7271577857683188542}
   - component: {fileID: 2884278870849994868}
+  - component: {fileID: 3080159260904899434}
   m_Layer: 0
   m_Name: Turret Tower 01
   m_TagString: Untagged
@@ -4934,8 +4935,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 7271158023556725166}
   projectileParticles: {fileID: 3092709294802610997}
-  range: 50
+  range: 30
   target: {fileID: 0}
+--- !u!114 &3080159260904899434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276954420171623392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baaa72079c8749c43a2ea19b166c4176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7277077112202773764
 GameObject:
   m_ObjectHideFlags: 0

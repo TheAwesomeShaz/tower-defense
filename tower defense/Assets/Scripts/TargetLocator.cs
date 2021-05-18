@@ -14,7 +14,11 @@ public class TargetLocator : MonoBehaviour
     void Update()
     {
         FindClosestTarget();
-        AimWeapon();
+        if (target != null)
+        {
+            AimWeapon();
+        }
+
     }
 
     private void FindClosestTarget()
@@ -41,6 +45,7 @@ public class TargetLocator : MonoBehaviour
     private void AimWeapon()
     {
         float targetDistance = Vector3.Distance(transform.position, target.position);
+
         weapon.LookAt(target);
         if (targetDistance <= range)
         {
@@ -54,8 +59,12 @@ public class TargetLocator : MonoBehaviour
 
     void Attack(bool isActive)
     {
-        var emissionModule = projectileParticles.emission;
-        emissionModule.enabled = isActive;
+        if (target.gameObject.activeInHierarchy)
+        {
+            var emissionModule = projectileParticles.emission;
+            emissionModule.enabled = isActive;
+        }
+
     }
 }
 

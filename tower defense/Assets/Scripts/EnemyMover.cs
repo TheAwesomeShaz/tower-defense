@@ -7,12 +7,20 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
+
+    Enemy enemy;
+
     // Start is called before the first frame update
     void OnEnable()
     {
         FindPath();
         ReturnToStart();
         StartCoroutine(followPath());
+    }
+
+    void Start()
+    {
+        enemy = GetComponent<Enemy>();
     }
 
     void FindPath()
@@ -54,6 +62,7 @@ public class EnemyMover : MonoBehaviour
         //disable this particular object in the pool when reaching end of the path 
         //(i.e when there are no more waypoints in the path List)
         gameObject.SetActive(false);
+        enemy.StealGold();
     }
 
 }
