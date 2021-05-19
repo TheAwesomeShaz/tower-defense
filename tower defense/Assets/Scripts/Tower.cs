@@ -4,10 +4,28 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+
+    [SerializeField] int cost = 75;
+
     public bool CreateTower(Tower tower, Vector3 position)
     {
-        Instantiate(tower.gameObject, position, Quaternion.identity);
+        Bank bank = FindObjectOfType<Bank>();
 
-        return true;
+        if (!bank)
+        {
+            return false;
+        }
+
+        if (bank.CurrentBalance >= cost)
+        {
+
+            Instantiate(tower.gameObject, position, Quaternion.identity);
+            bank.Withdraw(cost);
+            return true;
+        }
+
+        //i.e none of the "if" conditions are caught 
+        return false;
+
     }
 }

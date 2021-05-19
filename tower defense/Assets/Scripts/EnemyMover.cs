@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
@@ -27,11 +29,16 @@ public class EnemyMover : MonoBehaviour
     {
         path.Clear();
 
-        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+        GameObject parent = GameObject.FindGameObjectWithTag("Path");
 
-        foreach (var wp in waypoints) // wp for waypoint
+        foreach (Transform child in parent.transform)
         {
-            path.Add(wp.GetComponent<Waypoint>());
+            Waypoint waypoint = child.GetComponent<Waypoint>();
+            if (waypoint) //if waypoint is not null
+            {
+                path.Add(waypoint);
+
+            }
         }
     }
 
@@ -61,8 +68,12 @@ public class EnemyMover : MonoBehaviour
 
         //disable this particular object in the pool when reaching end of the path 
         //(i.e when there are no more waypoints in the path List)
+        FinishPath();
+    }
+
+    private void FinishPath()
+    {
         gameObject.SetActive(false);
         enemy.StealGold();
     }
-
 }

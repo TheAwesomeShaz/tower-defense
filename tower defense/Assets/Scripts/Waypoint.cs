@@ -14,10 +14,7 @@ public class Waypoint : MonoBehaviour
     public bool IsPlaceable { get { return isPlaceable; } }
 
 
-    private void Start()
-    {
 
-    }
 
     void OnMouseDown()
     {
