@@ -8,7 +8,7 @@
 - the gold increases by a certain value if you kill a catapult.. The difficulty gets ramped up as the level goes on..
 - The level just restarts when you die and there is no win condition, survive as long as u can.. 
 - The catapults follow a predetermined path.. I will make a separate project for implementing pathfinding
-<b> The game is not pretty, just making mechanics cuz I wanna learn some game design principles and stuff</b>
+<br> <b> The game is not pretty, just making mechanics cuz I wanna learn some game design principles and stuff</b>
 
 
 ### STUFF LEARNED
