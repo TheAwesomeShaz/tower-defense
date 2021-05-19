@@ -1,12 +1,11 @@
 # tower-defense
-<br><br><br>
-### Description
+<br>
+### DESCRIPTION
 - Normal tower defense game where you have to stop catapults from getting to the end point of the road by placing towers which cost gold..<br>
 - you have a certain amount of gold, the gold decreases by a certain value if a catapult reaches the end point,<br>
 - the gold increases by a certain value if you kill a catapult.. The difficulty gets ramped up as the level goes on..
 - The level just restarts when you die and there is no win condition, survive as long as u can.. 
 - The catapults follow a predetermined path.. I will make a separate project for implementing pathfinding
-- 
 #### The game is not pretty just making mechanics cuz I wanna learnsome game design rn, don't wanna waste time designing the level..
 
 
